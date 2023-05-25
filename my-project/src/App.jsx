@@ -4,7 +4,9 @@ import Sidebar from "./Navbar/Sidebar";
 import Dashboard from "./Pages/Dashboard";
 import Chart from "./Pages/Chart";
 import Activities from "./Pages/Activities";
+import DailyActivities from "./Pages/DailyActivities";
 import AddManger from "./Pages/AddManger";
+import AssestManagment from "./Pages/AssestManagment";
 const App = () => {
   return (
     <div>
@@ -17,7 +19,9 @@ const App = () => {
         </div>
         {/* idher content aay ga page ka */}
         <div className="lg:w-4/5 w-full">
-          <AddManger></AddManger>
+          <AssestManagment></AssestManagment>
+          {/* <DailyActivities></DailyActivities> */}
+          {/* <AddManger></AddManger> */}
           {/* <Dashboard></Dashboard>
           <Chart></Chart> */}
         </div>

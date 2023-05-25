@@ -12,10 +12,13 @@ const Topbar = () => {
         <div className="flex ">
           <h2 className="text-2xl">My Logo</h2>
         </div>
-        <div className="flex py-2 gap-4">
+        <div className="flex py-1 gap-4">
           <NotificationsIcon></NotificationsIcon>
           <LanguageIcon></LanguageIcon>
           <SettingsIcon></SettingsIcon>
+          <h1 className="text-xl font-semibold bg-orange-600 rounded-xl text-white px-3 py-1">
+            Login
+          </h1>
           <div className="block lg:hidden" onClick={() => isClicked(!clicked)}>
             <i
               className={`${

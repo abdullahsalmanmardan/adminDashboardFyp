@@ -1,7 +1,7 @@
 import React from "react";
 import Slider from "@mui/material/Slider";
 
-const AddManger = () => {
+const AddEmployee = () => {
   return (
     <div className="w-full ">
       <div className="bg-white mx-4 my-5 px-4 py-4 rounded-lg shadow-white">
@@ -115,4 +115,4 @@ const AddManger = () => {
   );
 };
 
-export default AddManger;
+export default AddEmployee;
