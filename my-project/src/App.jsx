@@ -7,6 +7,7 @@ import Activities from "./Pages/Activities";
 import DailyActivities from "./Pages/DailyActivities";
 import AddManger from "./Pages/AddManger";
 import AssestManagment from "./Pages/AssestManagment";
+import UpdateAssests from "./Pages/UpdateAssests";
 const App = () => {
   return (
     <div>
@@ -19,7 +20,8 @@ const App = () => {
         </div>
         {/* idher content aay ga page ka */}
         <div className="lg:w-4/5 w-full">
-          <AssestManagment></AssestManagment>
+          <UpdateAssests></UpdateAssests>
+          {/* <AssestManagment></AssestManagment> */}
           {/* <DailyActivities></DailyActivities> */}
           {/* <AddManger></AddManger> */}
           {/* <Dashboard></Dashboard>
