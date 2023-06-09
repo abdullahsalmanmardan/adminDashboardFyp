@@ -2,44 +2,24 @@ import * as React from "react";
 import { DataGrid } from "@mui/x-data-grid";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { Link } from "react-router-dom";
-import img from "../assets/mypic.jpg";
-const UpdateAssests = () => {
+const DataGridView = () => {
   //todo is ma hum data to dosri file se export kar ke yaha lay gay
   // todo idher hum ne sab data(row) rowData ma pass kar diya ha
   // const [rowData, setRowData] = useState(rows);
 
   // todo these are the heading tags of the table
   const columns = [
-    { field: "id", headerName: "ID", width: 35 },
+    { field: "id", headerName: "ID", width: 70 },
     // todo renderCell se hum apni marzi ki output show kar sakty ha
     {
-      //* is se b datashow ho jay ga magar renderCell se data ko hum customize kar sakin gay
-      field: "img",
-      // todo this is the table header name
-      headerName: "Image",
-      width: 60,
-      // todo idher hum image b add kar sakty ha our jo b data ho color wegrar b de sakty ha
-      renderCell: (params) => {
-        return (
-          <div>
-            <img
-              className="w-12 h-8 rounded-full"
-              src={img}
-              alt={params.row.firstName}
-            />
-          </div>
-        );
-      },
-    },
-    {
-      //* is se b datashow ho jay ga magar renderCell se data ko hum customize kar sakin gay
       field: "firstName",
-      // todo this is the table header name
       headerName: "First name",
       width: 130,
       // todo idher hum image b add kar sakty ha our jo b data ho color wegrar b de sakty ha
       renderCell: (params) => {
-        return <div>{params.row.firstName}</div>;
+        return (
+          <div className="bg-green-400 rounded-xl">{params.row.lastName}</div>
+        );
       },
     },
     { field: "lastName", headerName: "Last name", width: 130 },
@@ -70,9 +50,9 @@ const UpdateAssests = () => {
           <div className="flex">
             <div>
               {/* todo is tarha hum url ma wo id send karin gay */}
-              <Link key={params.row.id} to={"/UpdateAssests/" + params.row.id}>
-                <button className="bg-yellow-300 text-black px-2 py-2 rounded-xl">
-                  Update
+              <Link to={"/user/" + params.row.id}>
+                <button className="bg-blue-600 text-white px-2 py-2 rounded-xl">
+                  update
                 </button>
               </Link>
             </div>
@@ -89,14 +69,19 @@ const UpdateAssests = () => {
   // todo these are the values for these headers
   // todo jo nam yaha key ma dena ha wohi name upr coloum ma b dena ha
   const rows = [
-    { id: 1, img: "myimg", lastName: "Snow", firstName: "Jon", age: 35 },
-    { id: 2, img: "myimg", lastName: "Snow", firstName: "Jon", age: 35 },
-
-    { id: 3, img: "myimg", lastName: "Lannister", firstName: "Jaime", age: 45 },
+    { id: 1, lastName: "Snow", firstName: "Jon", age: 35 },
+    { id: 2, lastName: "Lannister", firstName: "Cersei", age: 42 },
+    { id: 3, lastName: "Lannister", firstName: "Jaime", age: 45 },
+    { id: 4, lastName: "Stark", firstName: "Arya", age: 16 },
+    { id: 5, lastName: "Targaryen", firstName: "Daenerys", age: null },
+    { id: 6, lastName: "Melisandre", firstName: null, age: 150 },
+    { id: 7, lastName: "Clifford", firstName: "Ferrara", age: 44 },
+    { id: 8, lastName: "Frances", firstName: "Rossini", age: 36 },
+    { id: 9, lastName: "Roxie", firstName: "Harvey", age: 65 },
   ];
   return (
-    <div className="mx-2 my-4 bg-white">
-      <div style={{ height: 400, width: "100%" }}>
+    <>
+      <div style={{ height: 400, width: "100%", overflow: "scroll" }}>
         <DataGrid
           rows={rows}
           columns={columns}
@@ -106,8 +91,8 @@ const UpdateAssests = () => {
           checkboxSelection
         />
       </div>
-    </div>
+    </>
   );
 };
 
-export default UpdateAssests;
+export default DataGridView;

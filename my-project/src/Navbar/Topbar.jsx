@@ -32,8 +32,9 @@ const Topbar = () => {
       </div>
 
       <div
-        className={`py-8 w-full absolute z-50 duration-700 ease-in-out ${
-          clicked ? "left-0" : "left-[-100%]"
+        className={`py-8 w-full absolute duration-700 ease-in-out ${
+          (clicked ? "left-0" : "left-[-100%]",
+          clicked ? "relative" : "absloute")
         }  lg:hidden bg-white h-screen`}
       >
         <Sidebar></Sidebar>

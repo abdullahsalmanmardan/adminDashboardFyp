@@ -38,24 +38,24 @@ const Chart = () => {
       uv: 4000,
     },
     {
-      name: "August",
+      name: "Aug",
       uv: 3000,
     },
     {
-      name: "september",
+      name: "sep",
       uv: 2000,
     },
     {
-      name: "october",
+      name: "oct",
       uv: 2780,
     },
     {
-      name: "november",
+      name: "nov",
       uv: 1890,
     },
   ];
   return (
-    <div className="flex">
+    <div className="flex w-full">
       <div className="px-2 w-3/5">
         <div className="px-3 shadow-2xl bg-white">
           <h2 className="py-4 font-extrabold text-2xl">Analytics</h2>
