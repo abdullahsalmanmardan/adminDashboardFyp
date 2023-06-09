@@ -1,16 +1,17 @@
 import React from "react";
 import Topbar from "./Navbar/Topbar";
 import Sidebar from "./Navbar/Sidebar";
-import Dashboard from "./Pages/Dashboard";
-import Chart from "./Pages/Chart";
-import Activities from "./Pages/Activities";
-import DailyActivities from "./Pages/DailyActivities";
-import AddManger from "./Pages/AddManger";
-import AssestManagment from "./Pages/AssestManagment";
-import UpdateAssests from "./Pages/UpdateAssests";
+import Dashboard from "./AdminPages/Dashboard";
+import Chart from "./AdminPages/Chart";
+import Activities from "./AdminPages/Activities";
+import DailyActivities from "./AdminPages/DailyActivities";
+import AddManger from "./AdminPages/AddManger";
+import AssestManagment from "./AdminPages/AssestManagment";
+import UpdateAssests from "./AdminPages/UpdateAssests";
 import Footer from "./Footer/Footer";
 import DataGridView from "./DataGridView/DataGridView";
-import UpdateAssestsInfo from "./Pages/UpdateAssestsInfo";
+import UpdateAssestsInfo from "./AdminPages/UpdateAssestsInfo";
+import AddProduct from "./InventoryManager/AddProduct";
 const App = () => {
   return (
     <div className="relative">
@@ -29,8 +30,9 @@ const App = () => {
           <Dashboard></Dashboard>
           <Chart></Chart>
           {/* <DataGridView></DataGridView> */}
-          <UpdateAssests></UpdateAssests>
-          <UpdateAssestsInfo></UpdateAssestsInfo>
+          {/* <UpdateAssests></UpdateAssests>
+          <UpdateAssestsInfo></UpdateAssestsInfo> */}
+          <AddProduct></AddProduct>
         </div>
       </div>
       {/* <Footer></Footer> */}
