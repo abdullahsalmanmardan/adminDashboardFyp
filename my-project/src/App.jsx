@@ -20,6 +20,8 @@ import EmployeeAttendence from "./HR Manager/EmployeeAttendence";
 import EmployeeLeave from "./HR Manager/EmployeeLeave";
 import ExpenseManagment from "./HR Manager/ExpenseManagment";
 import AddExpense from "./HR Manager/AddExpense";
+import ProductInfo from "./OrderManager/ProductInfo";
+import CartAndOrder from "./OrderManager/CartAndOrder";
 const App = () => {
   return (
     <div className="relative">
@@ -46,9 +48,11 @@ const App = () => {
           {/* <PayrollManagment></PayrollManagment> */}
           {/* <UpdatePay></UpdatePay> */}
           {/* <EmployeeAttendence></EmployeeAttendence> */}
-          <EmployeeLeave></EmployeeLeave>
+          {/* <EmployeeLeave></EmployeeLeave>
           <ExpenseManagment></ExpenseManagment>
           <AddExpense></AddExpense>
+          <ProductInfo></ProductInfo> */}
+          <CartAndOrder></CartAndOrder>
         </div>
       </div>
       {/* <Footer></Footer> */}
