@@ -71,7 +71,7 @@ const EmployeeAttendence = () => {
             <div>
               {/* todo is tarha hum url ma wo id send karin gay */}
               <Link key={params.row.id} to={"/UpdateAssests/" + params.row.id}>
-                <button className="bg-yellow-300 text-black px-2 py-2 rounded-xl">
+                <button className="bg-blue-600 text-white px-2 py-2 rounded-xl">
                   Leave Request
                 </button>
               </Link>

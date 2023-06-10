@@ -9,7 +9,7 @@ import AddManger from "./AdminPages/AddManger";
 import AssestManagment from "./AdminPages/AssestManagment";
 import UpdateAssests from "./AdminPages/UpdateAssests";
 import Footer from "./Footer/Footer";
-import DataGridView from "./DataGridView/DataGridView";
+
 import UpdateAssestsInfo from "./AdminPages/UpdateAssestsInfo";
 import AddProduct from "./InventoryManager/AddProduct";
 import UpdateProduct from "./InventoryManager/UpdateProduct";
@@ -17,6 +17,9 @@ import UpdateProductInfo from "./InventoryManager/UpdateProductInfo";
 import PayrollManagment from "./HR Manager/PayrollManagment";
 import UpdatePay from "./HR Manager/UpdatePay";
 import EmployeeAttendence from "./HR Manager/EmployeeAttendence";
+import EmployeeLeave from "./HR Manager/EmployeeLeave";
+import ExpenseManagment from "./HR Manager/ExpenseManagment";
+import AddExpense from "./HR Manager/AddExpense";
 const App = () => {
   return (
     <div className="relative">
@@ -42,7 +45,10 @@ const App = () => {
           {/* <UpdateProductInfo></UpdateProductInfo> */}
           {/* <PayrollManagment></PayrollManagment> */}
           {/* <UpdatePay></UpdatePay> */}
-          <EmployeeAttendence></EmployeeAttendence>
+          {/* <EmployeeAttendence></EmployeeAttendence> */}
+          <EmployeeLeave></EmployeeLeave>
+          <ExpenseManagment></ExpenseManagment>
+          <AddExpense></AddExpense>
         </div>
       </div>
       {/* <Footer></Footer> */}
