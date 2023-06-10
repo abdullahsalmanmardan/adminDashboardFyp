@@ -22,6 +22,7 @@ import ExpenseManagment from "./HR Manager/ExpenseManagment";
 import AddExpense from "./HR Manager/AddExpense";
 import ProductInfo from "./OrderManager/ProductInfo";
 import CartAndOrder from "./OrderManager/CartAndOrder";
+import UpdateManager from "./AdminPages/UpdateManager";
 const App = () => {
   return (
     <div className="relative">
@@ -52,7 +53,8 @@ const App = () => {
           <ExpenseManagment></ExpenseManagment>
           <AddExpense></AddExpense>
           <ProductInfo></ProductInfo> */}
-          <CartAndOrder></CartAndOrder>
+          {/* <CartAndOrder></CartAndOrder> */}
+          <UpdateManager></UpdateManager>
         </div>
       </div>
       {/* <Footer></Footer> */}
