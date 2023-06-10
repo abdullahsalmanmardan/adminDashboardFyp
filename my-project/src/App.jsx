@@ -12,6 +12,11 @@ import Footer from "./Footer/Footer";
 import DataGridView from "./DataGridView/DataGridView";
 import UpdateAssestsInfo from "./AdminPages/UpdateAssestsInfo";
 import AddProduct from "./InventoryManager/AddProduct";
+import UpdateProduct from "./InventoryManager/UpdateProduct";
+import UpdateProductInfo from "./InventoryManager/UpdateProductInfo";
+import PayrollManagment from "./HR Manager/PayrollManagment";
+import UpdatePay from "./HR Manager/UpdatePay";
+import EmployeeAttendence from "./HR Manager/EmployeeAttendence";
 const App = () => {
   return (
     <div className="relative">
@@ -27,12 +32,17 @@ const App = () => {
           {/* <AssestManagment></AssestManagment> */}
           {/* <DailyActivities></DailyActivities> */}
           {/* <AddManger></AddManger> */}
-          <Dashboard></Dashboard>
-          <Chart></Chart>
+          {/* <Dashboard></Dashboard>
+          <Chart></Chart> */}
           {/* <DataGridView></DataGridView> */}
-          {/* <UpdateAssests></UpdateAssests>
-          <UpdateAssestsInfo></UpdateAssestsInfo> */}
-          <AddProduct></AddProduct>
+          {/* <UpdateAssests></UpdateAssests> */}
+          {/* <UpdateAssestsInfo></UpdateAssestsInfo> */}
+          {/* <AddProduct></AddProduct> */}
+          {/* <UpdateProduct></UpdateProduct> */}
+          {/* <UpdateProductInfo></UpdateProductInfo> */}
+          {/* <PayrollManagment></PayrollManagment> */}
+          {/* <UpdatePay></UpdatePay> */}
+          <EmployeeAttendence></EmployeeAttendence>
         </div>
       </div>
       {/* <Footer></Footer> */}
