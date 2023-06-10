@@ -104,6 +104,19 @@ const AddManger = () => {
             </div>
           </div>
         </div>
+        <div className="flex w-full gap-4 pb-2">
+          <div className="">
+            <div>
+              <label className="font-bold">Image</label>
+            </div>
+            <div>
+              <input
+                type="file"
+                className="border border-black rounded-lg w-full pl-4 font-bold text-xl"
+              />
+            </div>
+          </div>
+        </div>
         {/* 1 button for register Add Manager */}
         <div className="flex justify-center pb-2">
           <button className="border font-semibold rounded-xl px-3 py-1 hover:transition hover:ease-in-out hover:bg-orange-600 hover:text-white">

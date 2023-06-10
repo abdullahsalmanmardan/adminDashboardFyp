@@ -37,7 +37,7 @@ const App = () => {
         <div className="lg:pl-[20%] absloute  w-full">
           {/* <AssestManagment></AssestManagment> */}
           {/* <DailyActivities></DailyActivities> */}
-          {/* <AddManger></AddManger> */}
+          <AddManger></AddManger>
           {/* <Dashboard></Dashboard>
           <Chart></Chart> */}
           {/* <DataGridView></DataGridView> */}
