@@ -1,82 +1,277 @@
 import React from "react";
-import DashboardIcon from "@mui/icons-material/Dashboard";
-import AddCircleIcon from "@mui/icons-material/AddCircle";
-import PersonRemoveIcon from "@mui/icons-material/PersonRemove";
-import AccountBalanceIcon from "@mui/icons-material/AccountBalance";
-import LocalActivityIcon from "@mui/icons-material/LocalActivity";
-import AnalyticsIcon from "@mui/icons-material/Analytics";
+import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
+import { useContext } from "react";
+import { NavLink } from "react-router-dom";
+import { userContext } from "../App";
+import { useState } from "react";
+import {
+  SideBarLinks,
+  nouser,
+  HRSideBarLinks,
+  InventorySideBarLinks,
+  AdminSideBarLinks,
+} from "../Data/SideBarValue";
 const Sidebar = () => {
-  return (
-    <div>
-      <div className="dashboard py-4 px-2 flex gap-4 text-[14px] font-semibold hover:transition hover:ease-in-out  hover:bg-teal-500 hover:rounded-md hover:text-white">
-        <div className="">
-          <DashboardIcon></DashboardIcon>
-        </div>
-        <div>
-          <h1>DashBoard</h1>
-        </div>
-      </div>
+  //* this is for the orderAdmin
+  const [data, setData] = useState(SideBarLinks);
+  //* this is for the nouser
+  const [nouserdata, setNoUser] = useState(nouser);
+  //* this is for the hr
+  const [hrdata, hrsetData] = useState(HRSideBarLinks);
+  // * this is for the Inventory
+  const [inventorydata, inventorySetData] = useState(InventorySideBarLinks);
+  // *tis is for the admin
+  const [admindata, adminsetData] = useState(AdminSideBarLinks);
 
-      <div className="dashboard px-2 py-2 flex gap-2 text-[14px] font-semibold hover:transition hover:ease-in-out hover:bg-teal-500 hover:rounded-md hover:text-white">
-        <div className="text-green-500 ">
-          <AddCircleIcon></AddCircleIcon>
+  const { state, dispatch } = useContext(userContext);
+  const UserLoggedIN = () => {
+    if (state === "" || state === null) {
+      return (
+        <div className="dashboard py-4 px-2 flex-col  text-[14px]">
+          {nouserdata.map((l) => (
+            <div className="group">
+              <div className="py-2 px-2 hover:transition hover:ease-in-out  hover:bg-teal-500 hover:rounded-md hover:text-white">
+                <h1
+                  key={l.id}
+                  className="text-xl px-2 font-bold hover:text-white text-black"
+                >
+                  {l.name}
+                </h1>
+                <div className="w-full  text-black">
+                  <hr />
+                </div>
+              </div>
+              {l.submenu && (
+                <div className="hidden group-hover:block hover:block">
+                  {l.sublinks.map((sblinks) => (
+                    <div className="">
+                      <h1 className="px-4 text-lg font-semibold">
+                        {sblinks.title}
+                      </h1>
+                      <div className="w-full  text-black">
+                        <hr />
+                      </div>
+                      <div className="">
+                        {sblinks.sublink.map((sblink) => (
+                          <div className="flex">
+                            <div>
+                              <ArrowRightAltIcon></ArrowRightAltIcon>
+                            </div>
+                            <div>
+                              <h1 className="px-6 text-base " key={sblink.sid}>
+                                {sblink.name}
+                              </h1>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
         </div>
-        <div>
-          <h1>Add Manager</h1>
+      );
+    }
+    if (state == "admin") {
+      return (
+        <div className="dashboard py-4 px-2 flex-col  text-[14px]">
+          {admindata.map((l) => (
+            <div className="group">
+              <div className="py-2 px-2 hover:transition hover:ease-in-out  hover:bg-teal-500 hover:rounded-md hover:text-white">
+                <h1
+                  key={l.id}
+                  className="text-xl px-2 font-bold hover:text-white text-black"
+                >
+                  {l.name}
+                </h1>
+                <div className="w-full  text-black">
+                  <hr />
+                </div>
+              </div>
+              {l.submenu && (
+                <div className="hidden group-hover:block hover:block">
+                  {l.sublinks.map((sblinks) => (
+                    <div className="">
+                      <h1 className="px-4 text-lg font-semibold">
+                        {sblinks.title}
+                      </h1>
+                      <div className="w-full  text-black">
+                        <hr />
+                      </div>
+                      <div className="">
+                        {sblinks.sublink.map((sblink) => (
+                          <div className="flex">
+                            <div>
+                              <ArrowRightAltIcon></ArrowRightAltIcon>
+                            </div>
+                            <div>
+                              <h1 className="px-6 text-base " key={sblink.sid}>
+                                {sblink.name}
+                              </h1>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
         </div>
-      </div>
-      <div className="dashboard px-2 py-2 flex gap-2 text-[14px] font-semibold hover:transition hover:ease-in-out hover:bg-teal-500 hover:rounded-md hover:text-white">
-        <div className="text-red-500 ">
-          <PersonRemoveIcon></PersonRemoveIcon>
+      );
+    }
+    if (state == "hrmanager") {
+      return (
+        <div className="dashboard py-4 px-2 flex-col  text-[14px]">
+          {hrdata.map((l) => (
+            <div className="group">
+              <div className="py-2 px-2 hover:transition hover:ease-in-out  hover:bg-teal-500 hover:rounded-md hover:text-white">
+                <h1
+                  key={l.id}
+                  className="text-xl px-2 font-bold hover:text-white text-black"
+                >
+                  {l.name}
+                </h1>
+                <div className="w-full  text-black">
+                  <hr />
+                </div>
+              </div>
+              {l.submenu && (
+                <div className="hidden group-hover:block hover:block">
+                  {l.sublinks.map((sblinks) => (
+                    <div className="">
+                      <h1 className="px-4 text-lg font-semibold">
+                        {sblinks.title}
+                      </h1>
+                      <div className="w-full  text-black">
+                        <hr />
+                      </div>
+                      <div className="">
+                        {sblinks.sublink.map((sblink) => (
+                          <div className="flex">
+                            <div>
+                              <ArrowRightAltIcon></ArrowRightAltIcon>
+                            </div>
+                            <div>
+                              <h1 className="px-6 text-base " key={sblink.sid}>
+                                {sblink.name}
+                              </h1>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
         </div>
-        <div>
-          <h1>Remove Manager</h1>
+      );
+    }
+    if (state == "orderadmin") {
+      return (
+        <div className="dashboard py-4 px-2 flex-col  text-[14px]">
+          {data.map((l) => (
+            <div className="group">
+              <div className="py-2 px-2 hover:transition hover:ease-in-out  hover:bg-teal-500 hover:rounded-md hover:text-white">
+                <h1
+                  key={l.id}
+                  className="text-xl px-2 font-bold hover:text-white text-black"
+                >
+                  {l.name}
+                </h1>
+                <div className="w-full  text-black">
+                  <hr />
+                </div>
+              </div>
+              {l.submenu && (
+                <div className="hidden group-hover:block hover:block">
+                  {l.sublinks.map((sblinks) => (
+                    <div className="">
+                      <h1 className="px-4 text-lg font-semibold">
+                        {sblinks.title}
+                      </h1>
+                      <div className="w-full  text-black">
+                        <hr />
+                      </div>
+                      <div className="">
+                        {sblinks.sublink.map((sblink) => (
+                          <div className="flex">
+                            <div>
+                              <ArrowRightAltIcon></ArrowRightAltIcon>
+                            </div>
+                            <div>
+                              <h1 className="px-6 text-base " key={sblink.sid}>
+                                {sblink.name}
+                              </h1>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
         </div>
-      </div>
-
-      <div className="dashboard px-2 py-2 flex gap-2 text-[14px] font-semibold hover:transition hover:ease-in-out hover:bg-teal-500 hover:rounded-md hover:text-white">
-        <div className="text-green-500 ">
-          <AddCircleIcon></AddCircleIcon>
+      );
+    }
+    if (state == "inventorymanager") {
+      return (
+        <div className="dashboard py-4 px-2 flex-col  text-[14px]">
+          {inventorydata.map((l) => (
+            <div className="group">
+              <div className="py-2 px-2 hover:transition hover:ease-in-out  hover:bg-teal-500 hover:rounded-md hover:text-white">
+                <h1
+                  key={l.id}
+                  className="text-xl px-2 font-bold hover:text-white text-black"
+                >
+                  {l.name}
+                </h1>
+                <div className="w-full  text-black">
+                  <hr />
+                </div>
+              </div>
+              {l.submenu && (
+                <div className="hidden group-hover:block hover:block">
+                  {l.sublinks.map((sblinks) => (
+                    <div className="">
+                      <h1 className="px-4 text-lg font-semibold">
+                        {sblinks.title}
+                      </h1>
+                      <div className="w-full  text-black">
+                        <hr />
+                      </div>
+                      <div className="">
+                        {sblinks.sublink.map((sblink) => (
+                          <div className="flex">
+                            <div>
+                              <ArrowRightAltIcon></ArrowRightAltIcon>
+                            </div>
+                            <div>
+                              <h1 className="px-6 text-base " key={sblink.sid}>
+                                {sblink.name}
+                              </h1>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
         </div>
-        <div>
-          <h1>Add Employee</h1>
-        </div>
-      </div>
-      <div className="dashboard px-2 py-2 flex gap-2 text-[14px] font-semibold hover:transition hover:ease-in-out hover:bg-teal-500 hover:rounded-md hover:text-white">
-        <div className="text-red-500 ">
-          <PersonRemoveIcon></PersonRemoveIcon>
-        </div>
-        <div>
-          <h1>Remove Employee</h1>
-        </div>
-      </div>
-
-      <div className="dashboard px-2 py-2 flex gap-2 text-[14px] font-semibold hover:transition hover:ease-in-out hover:bg-teal-500 hover:rounded-md hover:text-white">
-        <div className="text-green-500 ">
-          <AccountBalanceIcon></AccountBalanceIcon>
-        </div>
-        <div>
-          <h1>Accounts Info</h1>
-        </div>
-      </div>
-      <div className="dashboard px-2 py-2 flex gap-2 text-[14px] font-semibold hover:transition hover:ease-in-out hover:bg-teal-500 hover:rounded-md hover:text-white">
-        <div className="text-red-500 ">
-          <LocalActivityIcon></LocalActivityIcon>
-        </div>
-        <div>
-          <h1>Daily Activities</h1>
-        </div>
-      </div>
-      <div className="dashboard px-2 py-2 flex gap-2 text-[12px] font-semibold hover:transition hover:ease-in-out hover:bg-teal-500 hover:rounded-md hover:text-white">
-        <div className="text-red-500 ">
-          <AnalyticsIcon></AnalyticsIcon>
-        </div>
-        <div>
-          <h1>Assest Managment</h1>
-        </div>
-      </div>
-    </div>
-  );
+      );
+    }
+  };
+  return <></>;
 };
 
 export default Sidebar;

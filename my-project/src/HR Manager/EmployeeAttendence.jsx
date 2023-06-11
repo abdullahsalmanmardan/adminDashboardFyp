@@ -70,7 +70,7 @@ const EmployeeAttendence = () => {
           <div className="flex gap-2">
             <div>
               {/* todo is tarha hum url ma wo id send karin gay */}
-              <Link key={params.row.id} to={"/UpdateAssests/" + params.row.id}>
+              <Link key={params.row.id} to={"/EmployeeLeave/" + params.row.id}>
                 <button className="bg-blue-600 text-white px-2 py-2 rounded-xl">
                   Leave Request
                 </button>

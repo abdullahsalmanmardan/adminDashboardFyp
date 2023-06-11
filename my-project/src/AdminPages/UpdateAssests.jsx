@@ -2,7 +2,7 @@ import * as React from "react";
 import { DataGrid } from "@mui/x-data-grid";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { Link } from "react-router-dom";
-import img from "../assets/mypic.jpg";
+import img from "../assets/blueBackgroundImage.jpg";
 const UpdateAssests = () => {
   //todo is ma hum data to dosri file se export kar ke yaha lay gay
   // todo idher hum ne sab data(row) rowData ma pass kar diya ha
@@ -70,7 +70,10 @@ const UpdateAssests = () => {
           <div className="flex">
             <div>
               {/* todo is tarha hum url ma wo id send karin gay */}
-              <Link key={params.row.id} to={"/UpdateAssests/" + params.row.id}>
+              <Link
+                
+                to={"/UpdateAssestsInfo/" + params.row.id}
+              >
                 <button className="bg-yellow-300 text-black px-2 py-2 rounded-xl">
                   Update
                 </button>
