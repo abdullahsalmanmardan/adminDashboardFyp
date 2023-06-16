@@ -3,19 +3,20 @@ import { categories } from "../assets/data";
 const UpdateProduct = () => {
   const [data, setData] = useState(categories);
   return (
-    <div className="w-full py-2 grid h-[350px] grid-cols-1 lg:grid-cols-3 lg:gap-2 ">
-      {data.map((cate) => (
-        <div className="flex-col group">
+    // overflow hidden ki waja se navbar ab sticky rhy gi
+    <div className="w-full py-2 overflow-x-hidden grid h-[350px] grid-cols-2 lg:grid-cols-3 lg:gap-2">
+      {data.map((cate, id) => (
+        <div key={id} className="flex-col group">
           <div className="px-2 pb-2  bg-slate-200">
             <img className="w-full h-full bg-cover" src={cate.img} />
           </div>
           <div>
-            <h1 className="flex group-hover:hidden justify-center translate-y-[-160%] text-white text-2xl">
+            <h1 className="flex group-hover:hidden justify-center relative top-[-60px] text-white text-2xl">
               ProductName
             </h1>
           </div>
 
-          <div className="hidden group-hover:opacity-100 group-hover:block group-hover:delay-300 group-hover:transition-all	group-hover:duration-300 group-hover:ease-in-out group-hover:translate-y-[-170%]">
+          <div className="hidden group-hover:opacity-100  group-hover:block  group-hover:transition-transform group-hover:ease-in-out	group-hover:duration-800 group-hover:relative group-hover:top-[-220px]">
             <div>
               <h1 className="flex justify-center text-white text-2xl">
                 Product Name
