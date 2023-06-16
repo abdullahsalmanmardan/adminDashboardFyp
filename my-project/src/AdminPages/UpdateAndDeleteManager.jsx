@@ -66,7 +66,10 @@ const UpdateAndDeleteManager = () => {
           <div className="flex">
             <div>
               {/* todo is tarha hum url ma wo id send karin gay */}
-              <Link key={params.row.id} to={"/UpdateAssests/" + params.row.id}>
+              <Link
+                key={params.row.id}
+                to={"/UpdateManagerInfo/" + params.row.id}
+              >
                 <button className="bg-yellow-300 text-black px-2 py-2 rounded-xl">
                   Update Manager
                 </button>

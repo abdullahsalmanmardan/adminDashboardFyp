@@ -46,7 +46,7 @@ const Routing = () => {
         />
         <Route
           exact
-          path="/UpdateManagerInfo"
+          path="/UpdateManagerInfo/:id"
           element={<UpdateManagerInfo />}
         />
         <Route exact path="/DailyActivities" element={<DailyActivities />} />
